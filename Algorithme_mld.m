@@ -36,7 +36,7 @@ c8=0;
 c10=0;
 cn=0; % Nombre de profil total récolté par l'ITP
 Nb_profil=0; % Nombre de profil total validé par l'algorithme 
-Nb_profil_sup % Nombre de profil supprimé par l'ensemble des critères 
+Nb_profil_sup=0 % Nombre de profil supprimé par l'ensemble des critères 
 %BM=NaN(10,85390); % Matrice stockant toutes les informations (déjà enregistré dans le fichier "filename.mat")
 
 
