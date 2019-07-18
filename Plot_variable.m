@@ -10,22 +10,16 @@ addpath('/home/rinaldi/Documents/seawater_ver3_3.1/')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Choisir l'instrument  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-inditp=56;                   
+inditp=109;                   
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Choisir les colorbar %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Choisir les limites de la profondeur %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Dmin=1020
-Dmax=1030
-
-Tmin=-1.8
-Tmax=0
-
-Smin=25
-Smax=35
+Profondeur_min=-100
+Profondeur_max=0
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -135,14 +129,16 @@ filename_3=(['Temperature_ITP_' num2str(inditp)  '.png'])
            end
                  
  end
-     
-
+    
+ p=Pression_109;
+ d=Density_109;
+ s=Salinity_109;
 hold on       
 
           figure(1)
           clf
           pcolor(A,-p,d),shading flat;
-          ylim([Dmin Dmax]) ;
+          ylim([Profondeur_min Profondeur_max]) % Fixe les limites de l'axe y entre 0 et 100 mètres
           colormap(jet)
           cb=colorbar();
           tl=title(cb,'kg/m^3');
@@ -156,7 +152,7 @@ hold on
           figure(2)
           clf
           pcolor(A,-p,s),shading flat;
-          ylim([Smin Smax]) % Fixe les limites de l'axe y entre 0 et 100 mètres
+          ylim([Profondeur_min Profondeur_max]) % Fixe les limites de l'axe y entre 0 et 100 mètres
           cb=colorbar; % Inclu une barre de couleur au graphique
           tl=title(cb,'psu')
           title(['Evolution de la salinité en fonction de la profondeur lors du déplacement de l instrument ' num2str(inditp)]) ;
@@ -168,7 +164,7 @@ hold on
            figure(3)
            clf
            pcolor(A,-p,t),shading flat;
-           ylim([Tmin Tmax]) % Fixe les limites de l'axe y entre 0 et 100 mètres
+           ylim([Profondeur_min Profondeur_max]) % Fixe les limites de l'axe y entre 0 et 100 mètres
            cb=colorbar; % Inclu une barre de couleur au graphique
            tl=title(cb,'°C')
            title(['Evolution de la temperature en fonction de la profondeur lors du déplacement de l instrument ' num2str(inditp)]) ;
