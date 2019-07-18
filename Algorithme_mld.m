@@ -6,6 +6,8 @@ addpath('/home/clique/matlab/utils')
 % Les données ITP se trouvent dans le répertoire: /net/krypton/data0/project/drakkar/REFERENCE_DATA/ITP/itp_isas17
 % Cet algorithme lit les données des différents ITP et calcul les valeurs
 % de MLD et de température/salinité/densité moyenne au sein de la couche de mélange.
+% La densité est calculée à partir d'une fonction d'état se trouvant dans
+% le dossier "seawater_ver3_3.1".
 % Le calcul de la mld est basé sur la méthode du gradient maximal des
 % profils de densités.
 % Ces informations sont stockées dans la matrice "BM" où chaque ligne 
@@ -44,7 +46,8 @@ Nb_profil_sup=0 % Nombre de profil supprimé par l'ensemble des critères
 %%%%B%%%%%%%%%%%%%%%%%%% Choisir le/les instrument(s) dont on veut calculer les données %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-for inditp=82
+for inditp=1
+    
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
