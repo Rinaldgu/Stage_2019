@@ -4,7 +4,10 @@ addpath('/home/clique/matlab/utils')
 
 
 % Les données ITP se trouvent dans le répertoire: /net/krypton/data0/project/drakkar/REFERENCE_DATA/ITP/itp_isas17
-% Cet algorithme lit les données des différents ITP et calcul les valeurs de MLD et de température/salinité/densité moyenne au sein de la couche de mélange.
+% Cet algorithme lit les données des différents ITP et calcul les valeurs
+% de MLD et de température/salinité/densité moyenne au sein de la couche de mélange.
+% Le calcul de la mld est basé sur la méthode du gradient maximal des
+% profils de densités.
 % Ces informations sont stockées dans la matrice "BM" où chaque ligne 
 % (de 1 à 10) contient respectivement les informations suivantes:(Numéro instru, Jours, Mois, Annee, MLD, Salinité,Température,Densité,Long,lat)
 
@@ -18,7 +21,7 @@ addpath('/home/clique/matlab/utils')
 % critere 10 "Suprpession ittérative des outliers" " 
 
 % L'algorithme possède plusieurs conditions afin de pouvoir lire de manière générique les données des différents instruments ITP.
-% Les différents variables (Long,lat,mld,densité,température,salinité) sont stockées dans un ficher 'filename.mat'.
+% Les différentes variables (Long,lat,mld,densité,température,salinité) sont stockées dans un ficher 'filename.mat'.
 % En lançant l'algorithme pour tout les instruments (1:110) on peut
 % connaître le nombre de profils total récolté par les ITP (variable "cn"),
 % le nombre de profils post-traitement (variable "Nb_profil") et le nombre
