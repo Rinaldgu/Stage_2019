@@ -7,6 +7,7 @@ clear on
 % moyenne_canada
 % sic_moyenne_mensuelle
 % sic_moyenne_canada
+% Ces programmes se trouvent dans le dossier "Calcul des moyennes"
 
 
 eurasie=[janvier_eurasie fevrier_eurasie mars_eurasie avril_eurasie mai_eurasie juin_eurasie juillet_eurasie aout_eurasie septembre_eurasie octobre_eurasie novembre_eurasie decembre_eurasie]
